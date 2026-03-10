@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Style.scss";
 import HeroSection from "../../Component/HeroSection/HeroSection";
 import BgImage from "../../assets/images/HeroSection.webp";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { apiRequest } from "../../../utils/api";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -10,6 +10,8 @@ import "swiper/css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
+import MainBtn from "../../Component/MainBtn/MainBtn";
 
 function ProjectDetail() {
     const { id } = useParams();
@@ -50,45 +52,47 @@ function ProjectDetail() {
 
           {/* Slider images */}
           <div className="images">
-            {project.images?.map((img, index) => (
-              <img
-                key={index}
-                src={`https://api.umnazmemarliq.az${img}`}
-                alt=""
-              />
-            ))}
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={20}
+              slidesPerView={3}
+              navigation
+              pagination={{ clickable: true }}
+            >
+              {project.images?.map((img, index) => (
+                <SwiperSlide key={index}>
+                  <img src={`https://api.umnazmemarliq.az${img}`} alt="" />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
 
           {/* Content */}
           <div className="projects-content">
-            <h1>{project.title?.az}</h1>
-            <p>{project.description?.az}</p>
+            <h3>{project.title_az}</h3>
+
+            <div
+              className="project-text"
+              dangerouslySetInnerHTML={{ __html: project.text_az }}
+            />
           </div>
 
           {/* Other Projects */}
           <div className="other-projects">
-            <h3>Digər layihələr</h3>
-            <div className="other-grid">
-                <div>
-                  <Swiper spaceBetween={50} slidesPerView={1}>
-              {otherProjects.map((item) => (
-                    <SwiperSlide key={item._id}>
-                      {" "}
-                      <div
-                        className="other-card"
-                        onClick={() => navigate(`/layiheler/${item._id}`)}
-                        style={{
-                          backgroundImage: `url(https://api.umnazmemarliq.az${item.thumbnail})`,
-                        }}
-                      >
-                        <div className="overlay">
-                          <h4>{item.title?.az}</h4>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                    ))}
-                  </Swiper>
+            <div className="head d-flex justify-content-between pb-4">
+              <h2 className="m-0" >Digər Layihələr</h2>
+              <Link to={"/layiheler"}>
+                {" "}
+                <MainBtn title={"Hamısına Bax"} />
+              </Link>
+            </div>
+
+            <div className="projects">
+              {project.images?.slice(0, 2).map((img, index) => (
+                <div className="project-image" key={index}>
+                  <img src={`https://api.umnazmemarliq.az${img}`} alt="" />
                 </div>
+              ))}
             </div>
           </div>
         </div>
