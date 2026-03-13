@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Style.scss";
 import MainBtn from "../MainBtn/MainBtn";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { apiRequest } from "../../../utils/api";
+import parse from "html-react-parser";
+// import
 function HomeServices() {
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    apiRequest("/services").then((data) => {
+      if (data && data.data) {
+        setServices(data.data);
+      }
+    });
+  }, []);
+
   const details = [
     {
       id: 1,
@@ -43,26 +55,29 @@ function HomeServices() {
         {/* CONTENT */}
         <div className="content container-fluid">
           <div className="services-cards">
-            {details.map((item) => (
-              <motion.div
-                className="service-card"
-                key={item.id}
-                initial={{ scale: 0.7, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                <div className="service-card__inner">
-                  <span className="card-id">/{item.id}</span>
-                  <h3 className="card-title">{item.title}</h3>
-                  <p className="card-text">{item.description}</p>
-                </div>
-              </motion.div>
+            {services.slice(0, 4).map((item, index) => (
+              <>
+                <motion.div
+                  className="service-card"
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  key={item._id}
+                  // viewport={{ once: true }}
+                >
+                  <div className="service-card__inner">
+                    <span className="card-id">/{index + 1}</span>
+                    <h3 className="card-title">{parse(item.title?.az)}</h3>
+                    <p className="card-text">{parse(item.text?.az)}</p>
+                  </div>
+                </motion.div>
+              </>
             ))}
           </div>
         </div>
 
         {/* BUTTON */}
-        <div >
+        <div>
           <Link to={"xidmetler"} className="">
             <MainBtn title={"Hamısına Bax "} />
           </Link>

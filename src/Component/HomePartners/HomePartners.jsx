@@ -17,7 +17,7 @@ function HomePartners() {
 
   return (
     <div className="partners">
-      <div className="partners-track">
+      <div className="partners-track m-0">
         {/* 2 dəfə render edirik ki infinite görünsün */}
         {[...partners, ...partners].map((item, index) => (
           <div className="partner-item" key={index}>

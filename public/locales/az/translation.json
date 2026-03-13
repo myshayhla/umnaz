@@ -1,0 +1,25 @@
+{
+  "header": {
+    "home": "Ana səhifə",
+    "about": "Haqqımızda",
+    "services": "Xidmətlər",
+    "projects": "Layihələr",
+    "partners": "Tərəfdaşlar",
+    "contact": "Əlaqə"
+  },
+  "hero": {
+    "title": "UMNAZ Memarlıq və Dizayn Agentliyi — memarlıqda funksionallıq, dizaynda estetik baxış.",
+    "description": "UmNaz Memarlıq MMC müasir memarlıq trendlərini fərdi yanaşma ilə birləşdirərək, yaşayış və kommersiya məkanları üçün funksional, estetik və davamlı həllər yaradır.",
+    "btn": "Layihələrə bax"
+  },
+  "about": {
+    "title": "Haqqımızda",
+    "subtitle": "Müasir Memarlığın Ünvanı",
+    "text": "UMNAZ Memarlıq və Dizayn Agentliyi 2023-cü ildən etibarən memarlıq və dizayn sahəsində fəaliyyət göstərən, müasir yanaşmaları və funksional həlləri ilə seçilən bir şirkətdir. Şirkət yaşayış, kommersiya və ictimai məkanlar üçün memarlıq layihələndirmə, dizayn və konsultasiya xidmətləri təqdim edir.",
+    "text2": "UmNaz Memarlıq MMC hər bir layihəyə fərdi yanaşaraq, estetik dəyərlərlə funksionallığı birləşdirən məkanlar yaradır. Layihələrimiz müasir memarlıq trendlərinə uyğun, müştəri ehtiyacları əsasında və yüksək keyfiyyət standartlarına uyğun şəkildə hazırlanır."
+  },
+  "projects": {
+    "title": "Layihələrimiz",
+    "subtitle": "Son Layihələrimiz"
+  }
+}

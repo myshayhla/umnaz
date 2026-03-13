@@ -9,9 +9,9 @@ function HomeContactForm() {
     <section className="contact-section">
       <motion.div
         className="container"
-        initial={{ scale: 0.7, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1 }}
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
       >
         {/* Title */}
         <div className="contact-header">

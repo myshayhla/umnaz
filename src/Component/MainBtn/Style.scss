@@ -46,9 +46,9 @@
   span {
     position: relative;
     z-index: 2;
-    padding: 0 24px;
+    padding: 0 12px;
     font-size: 14px;
-    letter-spacing: 1px;
+    // letter-spacing: 1px;
     color: $main-bg-color;
     transition: color 0.3s ease;
   }

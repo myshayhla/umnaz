@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Style.scss";
 import HeroSection from '../../Component/HeroSection/HeroSection';
 import BgImage from "../../assets/images/HeroSection.webp";
+import { apiRequest } from '../../../utils/api';
+import parse from "html-react-parser";
+
 
 function ServicesPage() {
+   const [services, setServices] = useState([]);
+    useEffect(() => {
+      apiRequest("/services").then((data) => {
+        if (data && data.data) {
+          setServices(data.data);
+        }
+      });
+    }, []);
+  
       const details = [
         {
           id: 1,
@@ -60,12 +72,12 @@ function ServicesPage() {
       <section id="services-page">
         <div className="services-page container-fluid">
           <div className="services-grid">
-            {details.map((item) => (
-              <div className="service-card" key={item.id}>
+            {services.map((item,index) => (
+              <div className="service-card" key={item._id}>
                     <div className="service-card__inner">
-                <span className="card-id">/{item.id}</span>
-                <h3 className="card-title">{item.title}</h3>
-                <p className="card-text">{item.description}</p>
+                <span className="card-id">/{index+1}</span>
+                <h3 className="card-title">{parse(item.title?.az)}</h3>
+                <p className="card-text">{parse(item.text?.az)}</p>
                 </div>
 
               </div>

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import "./Style.scss";
-import BgImage from "../../assets/images/OurMission.webp"
+import BgImage from "../../assets/images/OurMission.webp";
+// import {motion} from "../"
+import { motion } from "framer-motion";
+
 
 function OurMission() {
     const values = [
@@ -41,12 +44,22 @@ function OurMission() {
 
         {/* SAĞ */}
         <div className="right ">
-          <div className='content'>
-            <h1>Missiyamız</h1>
-            <p>
+          <div className="content">
+            <motion.h1
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              Missiyamız
+            </motion.h1>
+            <motion.p
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
               Müasir, funksional və estetik baxımdan dəyər yaradan memarlıq
               həlləri ilə müştərilərimizin gözləntilərini üstələmək.
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>

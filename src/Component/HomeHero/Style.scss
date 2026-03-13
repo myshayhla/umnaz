@@ -9,7 +9,8 @@
     color: $main-text-color;
     .home-hero{
         padding: 60px 6%;
-        padding-top:30%;
+        // padding-top:30%;
+        padding-top: 350px;
         h1{
             width: 55%;
             font-size: 48px;
@@ -27,13 +28,14 @@
     }
     @media (max-width:768px){
         .home-hero{
-            padding-top: 40%;
+            padding-top: 200px;
         }
         h1{
-            font-size: 30px;
+            font-size: 30px !important;
             width: 100% !important;
         }
        p{
+        font-size: 14px !important;
         width: 100% !important;
        }
     }

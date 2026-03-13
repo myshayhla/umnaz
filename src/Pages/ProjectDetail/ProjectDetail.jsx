@@ -28,7 +28,10 @@ function ProjectDetail() {
     });
     apiRequest("/projects").then((data) => {
       if (data && data.data) {
-        const filtered = data.data.filter((item) => item.id !== id).slice(0, 2);
+        const filtered = data.data
+          .filter((item) => item.id !== id) // cari layihəni çıxar
+          .sort(() => 0.5 - Math.random()) // random qarışdır
+          .slice(0, 2); // 2 layihə götür
         setOtherProjects(filtered);
       }
     });

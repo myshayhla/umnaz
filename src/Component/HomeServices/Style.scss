@@ -177,6 +177,12 @@
 // width: 100%;
 
 }
+@media screen and (max-width:992px){
+ .content{
+   padding-block: 0 !important;
+ }
+
+}
 
 
 }

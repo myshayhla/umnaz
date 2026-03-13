@@ -9,6 +9,8 @@
     padding:42px 50px;
     color: $main-text-color;
     border-radius: 20px;
+    overflow: hidden;
+    position: relative;
     h1{
         font-size: 50px;
         font-weight: 600;

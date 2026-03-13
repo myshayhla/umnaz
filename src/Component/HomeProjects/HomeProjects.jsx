@@ -49,11 +49,12 @@ function HomeProject() {
           </Link>
         </div>
       </motion.div>
-      <div className="projects d-flex flex-column flex-md-row  gap-3 gap-md-5 ">
+      <div className="projects d-flex flex-column flex-md-row  gap-md-3 gap-md-5 ">
         <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          // viewport={{ once: true }}
           className="col p-0 project-img"
         >
           <div className="project-overlay">
@@ -63,10 +64,11 @@ function HomeProject() {
           <img src={Project1} alt="" className="project" />
         </motion.div>
         <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className=" col p-0 project-img"
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          // viewport={{ once: true }}
+          className="col p-0 project-img"
         >
           <div className="project-overlay">
             <p className="g-0 m-0">Project Name</p>

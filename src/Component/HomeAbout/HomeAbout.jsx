@@ -12,9 +12,9 @@ function HomeAbout() {
         <div className="row d-flex flex-column flex-lg-row   align-items-center g-0">
           <motion.div
             className="text-side d-flex  flex-column align-items-start col-12 col-lg-7 g-0 "
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1 }}
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <span className="head-title">Haqqımızda</span>
             <h1
