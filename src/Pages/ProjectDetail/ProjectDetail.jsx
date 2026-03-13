@@ -18,6 +18,7 @@ function ProjectDetail() {
       const navigate = useNavigate();
   const [project, setProject] = useState(null);
   const [otherProjects, setOtherProjects] = useState([]);
+  const [activeImage, setActiveImage] = useState(null);
 
   useEffect(() => {
     // single project
@@ -29,7 +30,7 @@ function ProjectDetail() {
     apiRequest("/projects").then((data) => {
       if (data && data.data) {
         const filtered = data.data
-          .filter((item) => item.id !== id) // cari layihəni çıxar
+          .filter((item) => item._id !== id) // cari layihəni çıxar
           .sort(() => 0.5 - Math.random()) // random qarışdır
           .slice(0, 2); // 2 layihə götür
         setOtherProjects(filtered);
@@ -47,6 +48,13 @@ function ProjectDetail() {
         <div className="project-detail container-fluid g-0 ">
           {/* Thumbnail */}
           <div className="thumbnail">
+            <div
+              className="thumbnail-bg"
+              style={{
+                backgroundImage: `url(https://api.umnazmemarliq.az${project.thumbnail})`,
+              }}
+            ></div>
+
             <img
               src={`https://api.umnazmemarliq.az${project.thumbnail}`}
               alt={project.title?.az}
@@ -64,10 +72,22 @@ function ProjectDetail() {
             >
               {project.images?.map((img, index) => (
                 <SwiperSlide key={index}>
-                  <img src={`https://api.umnazmemarliq.az${img}`} alt="" />
+                  <img
+                    src={`https://api.umnazmemarliq.az${img}`}
+                    alt=""
+                    onClick={() =>
+                      setActiveImage(`https://api.umnazmemarliq.az${img}`)
+                    }
+                    style={{ cursor: "pointer" }}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
+            {activeImage && (
+              <div className="image-modal" onClick={() => setActiveImage(null)}>
+                <img src={activeImage} alt="preview" />
+              </div>
+            )}
           </div>
 
           {/* Content */}
@@ -83,7 +103,7 @@ function ProjectDetail() {
           {/* Other Projects */}
           <div className="other-projects">
             <div className="head d-flex justify-content-between pb-4">
-              <h2 className="m-0" >Digər Layihələr</h2>
+              <h2 className="m-0">Digər Layihələr</h2>
               <Link to={"/layiheler"}>
                 {" "}
                 <MainBtn title={"Hamısına Bax"} />
@@ -91,11 +111,21 @@ function ProjectDetail() {
             </div>
 
             <div className="projects">
-              {project.images?.slice(0, 2).map((img, index) => (
-                <div className="project-image" key={index}>
-                  <img src={`https://api.umnazmemarliq.az${img}`} alt="" />
-                </div>
-              ))}
+              <div className="projects">
+                {otherProjects.map((item) => (
+                  <div
+                    className="project-image"
+                    key={item._id}
+                    onClick={() => navigate(`/layiheler/${item._id}`)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <img
+                      src={`https://api.umnazmemarliq.az${item.thumbnail}`}
+                      alt={item.title_az}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
