@@ -1,0 +1,105 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "partners": "Partners",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "UMNAZ Architecture and Design Agency — functionality in architecture, aesthetics in design.",
+      "description": "UmNaz Architecture LLC combines modern architectural trends with a personalized approach to create functional, aesthetic, and sustainable solutions for residential and commercial spaces.",
+      "btn": "View Projects"
+    },
+    "about": {
+      "title": "About",
+      "subtitle": "Address of Modern Architecture",
+      "text": "UMNAZ Architecture and Design Agency has been operating since 2023 in the field of architecture and design, distinguished by modern approaches and functional solutions. The company provides architectural design, interior design, and consultancy services for residential, commercial, and public spaces.",
+      "text2": "UmNaz Architecture LLC approaches each project individually, creating spaces that combine aesthetics with functionality. Our projects are prepared according to modern architectural trends, client needs, and high-quality standards."
+    },
+    "projects": {
+      "title": "Our Projects",
+      "subtitle": "Latest Projects"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Services",
+      "btn": "View All"
+    },
+    "estetics": {
+      "text": "Spaces shaped by aesthetics",
+      "text2": "completed with functionality"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Get in touch with us",
+      "form": {
+        "firstName": {
+          "label": "First Name",
+          "placeholder": "Enter your first name"
+        },
+        "lastName": {
+          "label": "Last Name",
+          "placeholder": "Enter your last name"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "Enter your e-mail"
+        },
+        "subject": {
+          "label": "Subject",
+          "placeholder": "Subject"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Enter your message"
+        },
+        "btn": "Send"
+      }
+    },
+    "footer": {
+      "rights": "© All rights reserved.",
+      "developed": "Website developed by"
+    }
+  },
+  "about": {
+    "whyTitle": "Why Us?",
+    "whyText": "We approach each project not only as a design task but as a value-creating process. By combining modern architectural approaches with functionality and aesthetic vision, we provide solutions tailored to our clients’ needs and expectations.\n\nOur professional and responsible team emphasizes individual attention at every stage, creating quality and sustainable spaces with creative and innovative ideas. For us, the goal is not just to deliver a project, but to gain long-term satisfaction and trust.",
+    "estetics": {
+      "text": "Spaces shaped by aesthetics",
+      "text2": "completed with functionality"
+    },
+    "valuesTitle": "Our Values",
+    "valuesList": [
+      { "title": "Professionalism and Responsibility" },
+      { "title": "Individual Approach" },
+      { "title": "Creativity and Innovation" },
+      { "title": "Quality and Sustainability" }
+    ],
+    "missionTitle": "Our Mission",
+    "missionText": "To exceed our clients' expectations with modern, functional, and aesthetically valuable architectural solutions."
+  },
+  "services": {
+    "title": "Services"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "partners": {
+    "title": "Partners",
+    "text": "Together with our professional partners and strategic collaborators, we implement projects based on modern architectural approaches.",
+    "partnertext": "Our Partners"
+  },
+  "contact": {
+    "title": "Contact",
+    "headtitle": "Contact Methods",
+    "headtext": "You can use the following methods to get in touch with us and obtain detailed information about our services:",
+    "mail": "E-mail address",
+    "workHour": {
+      "weekly": "Monday – Saturday: 09:00 – 18:00",
+      "weekend": "Sunday: closed"
+    }
+  }
+}

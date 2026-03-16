@@ -15,13 +15,18 @@
   .projects {
     padding-top: 48px;
     margin: 0;
-    gap: 30px;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
     .project-img {
       position: relative;
       overflow: hidden;
       border-radius: 12px;
-        height: 340px;
+        height: 360px; 
+        width: 100%;
          min-height: 250px;
+        //  width: 600px;
+        //  border: 1px solid red;
       .project {
         width: 100%;
         height: 100%;
@@ -71,8 +76,13 @@
     .projects {
       padding-top: 36px;
       .project-img{
-        height: 250px !important;
+        height: 250px !important; 
       }
+    }
+  }
+  @media (max-width:768px){
+    .projects{
+      gap: 30px;
     }
   }
 }

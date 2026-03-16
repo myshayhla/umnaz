@@ -45,9 +45,10 @@ function ContactPage() {
                   <div>
                     <h4>İş saatları</h4>
                     <span>
-                      Bazar ertəsi – Şənbə: 09:00 – 18:00 <br />
-                      Bazar günü: istirahət günü
+                      Bazar ertəsi – Şənbə: 09:00 – 18:00
                     </span>
+                    <br />
+                    <span>Bazar günü: istirahət günü</span>
                   </div>
                 </div>
               </div>
@@ -100,8 +101,8 @@ function ContactPage() {
             </div>
           </div>
         </div>
-          </section>
-          <HomeContactForm/>
+      </section>
+      <HomeContactForm />
     </>
   );
 }

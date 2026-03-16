@@ -51,32 +51,30 @@
             </Link>
           </div>
         </motion.div>
-        <div className="projects d-flex flex-column flex-md-row  gap-md-3 gap-md-5 ">
+        <div className="projects row">
           {latestProjects.map((project) => (
-            <Link to={`/layiheler/${project.id}`} key={project._id}>
-              <motion.div
-                key={project._id}
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className="col p-0 project-img"
-              >
-                <div className="project-overlay">
-                  <p className="g-0 m-0">{project.title?.az}</p>
-                  <span>{project.text?.az}</span>
-                </div>
-                <img
-                  src={`https://api.umnazmemarliq.az${project.thumbnail}`}
-                  alt={project.title}
-                  className="project"
-                />
-              </motion.div>
-            </Link>
-          ))}
+            <div className="col-12 col-md-6" key={project._id}>
+              <Link to={`/layiheler/${project.id}`}>
+                <motion.div
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  className="project-img"
+                >
+                  <div className="project-overlay">
+                    <p>{project.title?.az}</p>
+                    <span>{project.text?.az}</span>
+                  </div>
 
-          <Link to={"/layiheler"} className="d-block d-md-none  d-flex ">
-            <MainBtn title={"Hamısına bax "} />
-          </Link>
+                  <img
+                    src={`https://api.umnazmemarliq.az${project.thumbnail}`}
+                    alt={project.title}
+                    className="project"
+                  />
+                </motion.div>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
     );

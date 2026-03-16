@@ -7,19 +7,99 @@
     "partners": "Tərəfdaşlar",
     "contact": "Əlaqə"
   },
-  "hero": {
-    "title": "UMNAZ Memarlıq və Dizayn Agentliyi — memarlıqda funksionallıq, dizaynda estetik baxış.",
-    "description": "UmNaz Memarlıq MMC müasir memarlıq trendlərini fərdi yanaşma ilə birləşdirərək, yaşayış və kommersiya məkanları üçün funksional, estetik və davamlı həllər yaradır.",
-    "btn": "Layihələrə bax"
-  },
-  "about": {
-    "title": "Haqqımızda",
-    "subtitle": "Müasir Memarlığın Ünvanı",
-    "text": "UMNAZ Memarlıq və Dizayn Agentliyi 2023-cü ildən etibarən memarlıq və dizayn sahəsində fəaliyyət göstərən, müasir yanaşmaları və funksional həlləri ilə seçilən bir şirkətdir. Şirkət yaşayış, kommersiya və ictimai məkanlar üçün memarlıq layihələndirmə, dizayn və konsultasiya xidmətləri təqdim edir.",
-    "text2": "UmNaz Memarlıq MMC hər bir layihəyə fərdi yanaşaraq, estetik dəyərlərlə funksionallığı birləşdirən məkanlar yaradır. Layihələrimiz müasir memarlıq trendlərinə uyğun, müştəri ehtiyacları əsasında və yüksək keyfiyyət standartlarına uyğun şəkildə hazırlanır."
-  },
-  "projects": {
-    "title": "Layihələrimiz",
-    "subtitle": "Son Layihələrimiz"
-  }
+ "home":{
+   "hero": {
+     "title": "UMNAZ Memarlıq və Dizayn Agentliyi — memarlıqda funksionallıq, dizaynda estetik baxış.",
+     "description": "UmNaz Memarlıq MMC müasir memarlıq trendlərini fərdi yanaşma ilə birləşdirərək, yaşayış və kommersiya məkanları üçün funksional, estetik və davamlı həllər yaradır.",
+     "btn": "Layihələrə bax"
+   },
+   "about": {
+     "title": "Haqqımızda",
+     "subtitle": "Müasir Memarlığın Ünvanı",
+     "text": "UMNAZ Memarlıq və Dizayn Agentliyi 2023-cü ildən etibarən memarlıq və dizayn sahəsində fəaliyyət göstərən, müasir yanaşmaları və funksional həlləri ilə seçilən bir şirkətdir. Şirkət yaşayış, kommersiya və ictimai məkanlar üçün memarlıq layihələndirmə, dizayn və konsultasiya xidmətləri təqdim edir.",
+     "text2": "UmNaz Memarlıq MMC hər bir layihəyə fərdi yanaşaraq, estetik dəyərlərlə funksionallığı birləşdirən məkanlar yaradır. Layihələrimiz müasir memarlıq trendlərinə uyğun, müştəri ehtiyacları əsasında və yüksək keyfiyyət standartlarına uyğun şəkildə hazırlanır."
+   },
+   "projects": {
+     "title": "Layihələrimiz",
+     "subtitle": "Son Layihələrimiz"
+   },
+   "services": {
+     "title": "Xidmətlərimiz",
+     "subtitle": "Xidmətlər",
+     "btn": "Hamısına bax"
+   },
+   "estetics": {
+     "text": "Estetika ilə formalaşan",
+     "text2": "funksionallıqla tamamlanan məkanlar"
+   },
+   "contact": {
+     "title": "Əlaqə",
+     "subtitle": "Bizimlə əlaqə saxlayın",
+     "form": {
+       "firstName": {
+         "label": "Ad",
+         "placeholder": "Adınızı daxil edin"
+       },
+       "lastName": {
+         "label": "Soyad",
+         "placeholder": "Soyadınızı daxil edin"
+       },
+       "email": {
+         "label": "E-mail",
+         "placeholder": "E-mailinizi daxil edin"
+       },
+       "subject": {
+         "label": "Başlıq",
+         "placeholder": "Başlıq"
+       },
+       "message": {
+         "label": "Mesaj",
+         "placeholder": "Mesajınızı daxil edin"
+       },
+       "btn": "Göndər"
+     }
+   },
+   "footer": {
+     "rights": "© Bütün hüquqlar qorunur.",
+     "developed": "Sayt hazırlandı"
+   }
+ },
+ "about":{
+   "whyTitle": "Niyə biz?",
+   "whyText": "Biz hər bir layihəyə yalnız dizayn işi kimi deyil, dəyər yaradan bir proses kimi yanaşırıq. Müasir memarlıq yanaşmalarını funksionallıq və estetik baxışla birləşdirərək, müştərilərimizin ehtiyac və gözləntilərinə uyğun həllər təqdim edirik.\n\n Peşəkar və məsuliyyətli komandamız hər mərhələdə fərdi yanaşmanı əsas götürür, yaradıcı və innovativ ideyalarla keyfiyyətli və davamlı məkanlar formalaşdırır. Bizim üçün məqsəd yalnız layihə təqdim etmək deyil, uzunmüddətli məmnuniyyət və etibar qazanmaqdır.",
+   "estetics": {
+     "text": "Estetika ilə formalaşan",
+     "text2": "funksionallıqla tamamlanan məkanlar"
+   },
+   "valuesTitle": "Dəyərlərimiz",
+   "valuesList": [
+      { "title": "Peşəkarlıq və məsuliyyət" },
+      { "title": "Fərdi yanaşma" },
+      { "title": "Yaradıcılıq və innovasiya" },
+      { "title": "Keyfiyyət və davamlılıq" }
+    ],
+   "missionTitle": "Missiyamız",
+   "missionText": "Müasir, funksional və estetik baxımdan dəyər yaradan memarlıq həlləri ilə müştərilərimizin gözləntilərini üstələmək."
+ },
+ "services":{
+  "title":"Xidmətlər"
+ },
+ "projects":{
+  "title":"Layihələr"
+ },
+ "partners":{
+  "title":"Tərəfdaşlar",
+  "text":"Peşəkar iş ortaqlarımız və strateji partnyorumuzla birlikdə müasir memarlıq yanaşmalarına əsaslanan layihələr həyata keçiririk.",
+  "partnertext":"İş ortaqlarımız"
+ },
+ "contact":{
+  "title":"Əlaqə",
+  "headtitle":"Əlaqə vasitələri",
+  "headtext":"Bizimlə əlaqə saxlamaq və xidmətlərimiz haqqında ətraflı məlumat almaq üçün aşağıdakı vasitələrdən istifadə edə bilərsiniz:",
+  "mail":"E-mail ünvanı",
+  "workHour":{
+    "weekly":" Bazar ertəsi – Şənbə: 09:00 – 18:00",
+    "weekend":"Bazar günü: istirahət günü"
+ }
+}
 }
