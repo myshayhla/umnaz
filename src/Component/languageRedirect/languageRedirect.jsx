@@ -1,43 +1,45 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { getCurrentLanguage } from "../../utils/languageUtils";
+import { useLocation, useNavigate } from "react-router-dom";
+import {
+  getCurrentLanguage,
+  removeLanguageFromPath,
+  addLanguageToPath,
+} from "../../utils/languageUtils";
 import { useTranslation } from "react-i18next";
 
 const LanguageRedirect = ({ children }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { i18n } = useTranslation();
 
   useEffect(() => {
     const currentLang = getCurrentLanguage(location.pathname);
 
-    if (i18n && i18n.changeLanguage && i18n.language !== currentLang) {
-      if (i18n.isInitialized) {
-        try {
-          i18n.changeLanguage(currentLang).catch((err) => {
-            console.error("Failed to change language:", err);
-          });
-        } catch (err) {
-          console.error("Error changing language:", err);
+    const changeLangAndUrl = async () => {
+      try {
+        await i18n.changeLanguage(currentLang);
+
+        const pathWithoutLang = removeLanguageFromPath(location.pathname);
+        const newPath = addLanguageToPath(pathWithoutLang, currentLang);
+
+        if (location.pathname !== newPath) {
+          navigate(newPath, { replace: true });
         }
-      } else {
-        // Wait for i18n to be ready
-        const checkReady = () => {
-          if (i18n.isInitialized) {
-            try {
-              i18n.changeLanguage(currentLang).catch((err) => {
-                console.error("Failed to change language:", err);
-              });
-            } catch (err) {
-              console.error("Error changing language:", err);
-            }
-          } else {
-            setTimeout(checkReady, 100);
-          }
-        };
-        checkReady();
+      } catch (err) {
+        console.error("Error changing language:", err);
       }
+    };
+
+    if (i18n.isInitialized) {
+      changeLangAndUrl();
+    } else {
+      const checkReady = () => {
+        if (i18n.isInitialized) changeLangAndUrl();
+        else setTimeout(checkReady, 100);
+      };
+      checkReady();
     }
-  }, [location.pathname, i18n]);
+  }, [location.pathname, i18n, navigate]);
 
   return children;
 };

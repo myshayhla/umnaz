@@ -77,7 +77,7 @@ function ContactPage() {
                 <div className="info-row">
                   <img src={Location} alt="location" />
                   <div>
-                    <h4>{t("contact.phone")}</h4>
+                    <h4>{t("contact.location")}</h4>
                     <span>Sumqayıt şəhəri, Bulvar küçəsi 39B, M38</span>
                   </div>
                 </div>

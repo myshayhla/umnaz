@@ -19,17 +19,16 @@ export const getLanguageFromPath = (pathname) => {
     pathWithoutLang: pathname,
   };
 };
+
 export const addLanguageToPath = (path, language) => {
   if (language === DEFAULT_LANGUAGE) {
     return path;
   }
 
-  // Handle empty or root path
   if (!path || path === "/") {
     return `/${language}`;
   }
 
-  // Remove leading slash if exists, then add language prefix
   const cleanPath = path.startsWith("/") ? path.slice(1) : path;
   return `/${language}/${cleanPath}`;
 };

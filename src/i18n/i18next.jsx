@@ -14,28 +14,14 @@ i18n
     fallbackLng: "az",
     supportedLngs: langs,
     debug: false,
-    interpolation: {
-      escapeValue: false,
-    },
+    interpolation: { escapeValue: false },
     detection: {
       order: ["path", "navigator"],
       lookupFromPathIndex: 0,
       checkWhitelist: true,
     },
-    backend: {
-      loadPath: "/locales/{{lng}}/translation.json",
-    },
-    react: {
-      useSuspense: false,
-    },
+    backend: { loadPath: "/locales/{{lng}}/translation.json" },
+    react: { useSuspense: false },
   });
-
-i18n.on("languageChanged", (lng) => {
-  const currentPath = window.location.pathname;
-  if (!currentPath.startsWith(`/${lng}`) && lng !== "az") {
-    const newPath = currentPath === "/" ? `/${lng}` : `/${lng}${currentPath}`;
-    window.history.replaceState({}, "", newPath);
-  }
-});
 
 export default i18n;

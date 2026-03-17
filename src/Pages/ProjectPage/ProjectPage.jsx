@@ -5,8 +5,10 @@ import BgImage from "../../assets/images/HeroSection.webp";
 import Img from "../../assets/images/WhyUs.webp";
 import Arrow from "../../assets/icons/arrowRight.svg";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { apiRequest } from "../../../utils/api";
+import { useTranslation } from "react-i18next";
+import { getCurrentLanguage } from "../../utils/languageUtils";
 
 function ProjectPage() {
   // const projects = [
@@ -33,7 +35,9 @@ function ProjectPage() {
   //   ];
   const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
-  
+  const { t, i18n } = useTranslation();
+  const { pathname } = useLocation();
+  const currentLanguage = getCurrentLanguage(pathname);
   useEffect(() => {
     apiRequest("/projects").then((data) => {
       if (data && data.data) {
@@ -47,7 +51,7 @@ function ProjectPage() {
   return (
     <>
       {console.log(projects)}
-      <HeroSection title={"Layihələr"} bgImage={BgImage} />
+      <HeroSection title={t("header.projects")} bgImage={BgImage} />
       <section id="projects-page">
         <div className="projects-page container-fluid">
           <div className="projects-grid">

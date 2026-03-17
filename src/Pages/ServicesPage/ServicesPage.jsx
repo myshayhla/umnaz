@@ -12,7 +12,8 @@ import { addLanguageToPath, getCurrentLanguage } from '../../utils/languageUtils
 function ServicesPage() {
     const { t } = useTranslation();
     const { pathname } = useLocation();
-    // Get current language from URL BAXXXXXXXXXXXXXXXX BUNA
+  // Get current language from URL BAXXXXXXXXXXXXXXXX BUNA
+  // const lang=
     const currentLanguage = getCurrentLanguage(pathname);
     const createLanguageAwarePath = (path) => {
       return addLanguageToPath(path, currentLanguage);
@@ -79,18 +80,17 @@ function ServicesPage() {
       ];
   return (
     <>
-      <HeroSection title={"Xidmətlər"} bgImage={BgImage} />
+      <HeroSection title={t("header.services")} bgImage={BgImage} />
       <section id="services-page">
         <div className="services-page container-fluid">
           <div className="services-grid">
-            {services.map((item,index) => (
+            {services.map((item, index) => (
               <div className="service-card" key={item._id}>
-                    <div className="service-card__inner">
-                <span className="card-id">/{index+1}</span>
-                <h3 className="card-title">{parse(item.title?.az)}</h3>
-                <p className="card-text">{parse(item.text?.az)}</p>
+                <div className="service-card__inner">
+                  <span className="card-id">/{index + 1}</span>
+                  <h3 className="card-title">{parse(item.title?.[currentLanguage])}</h3>
+                  <p className="card-text">{parse(item.text?.[currentLanguage])}</p>
                 </div>
-
               </div>
             ))}
           </div>
