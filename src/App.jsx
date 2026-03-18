@@ -9,7 +9,7 @@ import ContactPage from "./Pages/ContactPage/ContactPage";
 import ServicesPage from "./Pages/ServicesPage/ServicesPage";
 import ProjectPage from "./Pages/ProjectPage/ProjectPage";
 import ProjectDetail from "./Pages/ProjectDetail/ProjectDetail";
-import LanguageRedirect from "./Component/languageRedirect/LanguageRedirect";
+import LanguageRedirect from "./Component/languageRedirect/languageRedirect";
 import Loader from "./Component/Loader/Loader";
 import { useEffect, useState } from "react";
 import AOS from "aos";
