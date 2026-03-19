@@ -30,12 +30,8 @@ function Footer() {
 
 useEffect(() => {
   apiRequest("/settings").then((res) => {
-    console.log('RES', res);
-    
     if(res) {
       setSettings(res);
-      // console.log("LOG", res.data);
-      
     }
   });
 }, []);
@@ -60,35 +56,37 @@ useEffect(() => {
                 {t("home.footer.text2")}
               </p>
               <div className="footer-icons">
-                <div className="icon">
+                {/* <div className="icon">
                   <img src={Instagram} alt="instagram" />
-                </div>
-                {/* {settings?.instagram?.[i18n.language] && (
-                  <a
-                    href={settings.instagram[i18n.language]}
+                </div> */}
+                <div className="icon">
+                  <Link
+                    to={settings.instagram?.[i18n.language]}
                     target="_blank"
-                    rel="noreferrer"
                   >
                     <img src={Instagram} alt="instagram" />
-                  </a>
-                )} */}
-                <div className="icon">
-                  <img src={LinkedIn} alt="linkedin" />
+                  </Link>
                 </div>
                 <div className="icon">
-                  <img src={Facebook} alt="facebook" />
+                  <Link to={settings.linkedin?.[i18n.language]} target="_blank">
+                    <img src={LinkedIn} alt="linkedin" />
+                  </Link>
+                </div>
+                <div
+                  className="icon"
+                  to={settings.linkedin?.[i18n.language]}
+                  target="_blank"
+                >
+                  <Link>
+                    <img src={Facebook} alt="facebook" />
+                  </Link>
                 </div>
                 <div className="icon">
-                  <img src={Whatsapp} alt="whatsapp" />
+                  <Link to={settings.whatsapp?.[i18n.language]} target="_blank">
+                    <img src={Whatsapp} alt="whatsapp" />
+                  </Link>
                 </div>
               </div>
-
-              {/* Icons */}
-              {/* <div className="footer-icons">
-                <i className="fa-brands fa-instagram"></i>
-                <i className="fa-brands fa-facebook-f"></i>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div> */}
             </div>
 
             {/* SAĞ HISSƏ */}
@@ -99,32 +97,32 @@ useEffect(() => {
                   <h5>{t("home.footer.quickLinksTitle")}</h5>
                   <ul>
                     <li>
-                      <Link to="/">
+                      <Link to={createLanguageAwarePath("/")}>
                         <span>{t("home.footer.quickLinks.home")}</span>
                       </Link>
                     </li>
 
                     <li>
-                      <Link to="/haqqimizda">
+                      <Link to={createLanguageAwarePath("/haqqimizda")}>
                         <span> {t("home.footer.quickLinks.about")}</span>
                       </Link>
                     </li>
 
                     <li>
-                      <Link to="/xidmetler">
+                      <Link to={createLanguageAwarePath("/xidmetler")}>
                         <span> {t("home.footer.quickLinks.services")}</span>
                       </Link>
                     </li>
 
                     <li>
-                      <Link to="/layiheler">
+                      <Link to={createLanguageAwarePath("/layiheler")}>
                         {" "}
                         <span> {t("home.footer.quickLinks.projects")}</span>
                       </Link>
                     </li>
 
                     <li>
-                      <Link to="/terefdaslar">
+                      <Link to={createLanguageAwarePath("/terefdaslar")}>
                         {" "}
                         <span>{t("home.footer.quickLinks.partners")}</span>
                       </Link>

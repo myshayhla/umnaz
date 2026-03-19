@@ -9,14 +9,14 @@
   },
   "home": {
     "hero": {
-      "title": "UMNAZ Architecture and Design Agency — functionality in architecture, aesthetics in design.",
+      "title": "UMNAZ Architecture and Design LLC — functionality in architecture, aesthetics in design.",
       "description": "UmNaz Architecture LLC combines modern architectural trends with a personalized approach to create functional, aesthetic, and sustainable solutions for residential and commercial spaces.",
       "btn": "View Projects"
     },
     "about": {
       "title": "About Us",
       "subtitle": "Address of Modern Architecture",
-      "text": "UMNAZ Architecture and Design Agency has been operating since 2023 in the field of architecture and design, distinguished by modern approaches and functional solutions. The company provides architectural design, interior design, and consultancy services for residential, commercial, and public spaces.",
+      "text": "UMNAZ Architecture and Design LLC has been operating since 2023 in the field of architecture and design, distinguished by modern approaches and functional solutions. The company provides architectural design, interior design, and consultancy services for residential, commercial, and public spaces.",
       "text2": "UmNaz Architecture LLC approaches each project individually, creating spaces that combine aesthetics with functionality. Our projects are prepared according to modern architectural trends, client needs, and high-quality standards."
     },
     "projects": {
@@ -58,7 +58,7 @@
       }
     },
     "footer": {
-      "logotext": "UMNAZ Architecture and Design Agency — functionality in architecture,",
+      "logotext": "UMNAZ Architecture and Design LLC — functionality in architecture,",
       "text2": "aesthetic vision in design.",
       "quickLinksTitle": "Quick Links",
       "quickLinks": {

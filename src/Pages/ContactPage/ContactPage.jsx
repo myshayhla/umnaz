@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Style.scss";
 import HeroSection from "../../Component/HeroSection/HeroSection";
 import bgImage from "../../assets/images/HeroSection.webp";
@@ -12,23 +12,33 @@ import LinkedIn from "../../assets/icons/linkedin.svg";
 import Whatsapp from "../../assets/icons/whatsap.svg";
 import HomeContactForm from "../../Component/HomeContactForm/HomeContactForm";
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   addLanguageToPath,
   getCurrentLanguage,
 } from "../../utils/languageUtils";
 import { t } from "i18next";
-
+import { apiRequest } from "../../../utils/api";
 
 function ContactPage() {
-     const { t, i18n } = useTranslation();
-           const { pathname } = useLocation();
-           // Get current language from URL BAXXXXXXXXXXXXXXXX BUNA
-           const currentLanguage = getCurrentLanguage(pathname);
-           const createLanguageAwarePath = (path) => {
-             return addLanguageToPath(path, currentLanguage);
+  const { t, i18n } = useTranslation();
+  const { pathname } = useLocation();
+  // Get current language from URL BAXXXXXXXXXXXXXXXX BUNA
+  const currentLanguage = getCurrentLanguage(pathname);
+  const createLanguageAwarePath = (path) => {
+    return addLanguageToPath(path, currentLanguage);
   };
-  
+
+  const [settings, setSettings] = useState([]);
+
+  useEffect(() => {
+    apiRequest("/settings").then((res) => {
+      if (res) {
+        setSettings(res);
+      }
+    });
+  }, []);
+
   return (
     <>
       <HeroSection title={t("contact.title")} bgImage={bgImage} />
@@ -85,16 +95,30 @@ function ContactPage() {
 
               <div className="contact-icons">
                 <div className="icon">
-                  <img src={Instagram} alt="instagram" />
+                  <Link
+                    to={settings.instagram?.[i18n.language]}
+                    target="_blank"
+                  >
+                    <img src={Instagram} alt="instagram" />
+                  </Link>
                 </div>
                 <div className="icon">
-                  <img src={LinkedIn} alt="linkedin" />
+                  <Link to={settings.linkedin?.[i18n.language]} target="_blank">
+                    <img src={LinkedIn} alt="linkedin" />
+                  </Link>
                 </div>
                 <div className="icon">
-                  <img src={Facebook} alt="facebook" />
+                  <Link to={settings.facebook?.[i18n.language]} target="_blank">
+                    <img src={Facebook} alt="facebook" />
+                  </Link>
                 </div>
                 <div className="icon">
+                  <Link
+                    to={settings.whatsapp?.[i18n.language]}
+                    target="_blank"
+                  >
                   <img src={Whatsapp} alt="whatsapp" />
+                  </Link>
                 </div>
               </div>
             </div>
