@@ -1,0 +1,38 @@
+@use "../../styles/global.scss" as *;
+
+
+#news-page {
+  padding: 60px 0;
+  .news-card {
+  cursor: pointer;
+  margin-top: 40px;
+  color: $main-text-color;
+  .card-container{
+  border: 1px solid #2E2E2E;
+  border-radius: 10px;
+  overflow: hidden;
+
+  }
+  
+  .card-bg {
+    height: 190px;
+    img{
+        object-fit: cover;
+    }
+  
+  }
+  .text-side{
+    background-color: #141414;
+  padding:20px 10px;
+  
+
+    p{
+        margin: 0;
+        margin-top: 10px;
+        font-style: 10px;
+        color: #898989;
+    }
+  }
+}
+}
+

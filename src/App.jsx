@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ScrollToTop from "./utils/ScrollToTop";
+import NewsPage from "./Pages/NewsPage/NewsPage";
 
 AOS.init();
 
@@ -31,12 +32,13 @@ function App() {
   return (
     <BrowserRouter>
       <LanguageRedirect>
-        <ScrollToTop/>
+        <ScrollToTop />
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/haqqimizda" element={<AboutPage />} />
             <Route path="/terefdaslar" element={<Partners />} />
+            <Route path="/xeberler" element={<NewsPage />} />
             <Route path="/elaqe" element={<ContactPage />} />
             <Route path="/xidmetler" element={<ServicesPage />} />
             <Route path="/layiheler" element={<ProjectPage />} />
@@ -46,14 +48,13 @@ function App() {
             <Route path="/en" element={<Home />} />
             <Route path="/en/haqqimizda" element={<AboutPage />} />
             <Route path="/en/terefdaslar" element={<Partners />} />
+              <Route path="/en/xeberler" element={<NewsPage />} />
             <Route path="/en/elaqe" element={<ContactPage />} />
             <Route path="/en/xidmetler" element={<ServicesPage />} />
             <Route path="/en/layiheler" element={<ProjectPage />} />
             <Route path="/en/layiheler/:id" element={<ProjectDetail />} />
           </Route>
         </Routes>
-
-     
       </LanguageRedirect>
     </BrowserRouter>
   );
